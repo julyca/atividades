@@ -5,5 +5,6 @@ Repositório para o desenvolvimento de atividades para entrega da matéria de pr
 ## Atividade 1 - QRCode de Texto
 
 Desenvolvedoras:
-    - Julia Fernandes Santana
-    - Juliana Gomes Haroldo
+
+- Julia Fernandes Santana
+- Juliana Gomes Haroldo
