@@ -20,9 +20,6 @@ public class Usuario {
     public int getNumConta() {
         return numConta;
     }
-    public String getSenha() {
-        return senha;
-    }
 
     // setters
     public void setEmail(String email) {
@@ -33,5 +30,10 @@ public class Usuario {
     }
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    // metodos
+    public Boolean validarSenha(String senha){
+        return this.senha.equals(senha);
     }
 }
