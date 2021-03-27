@@ -1,13 +1,18 @@
 package models;
 
 public class Usuario {
+    private int id;
     private String nome;
     private String senha;
     private String email;
-    private static int numConta;
 
-    public Usuario(int conta){
-        Usuario.numConta = conta;
+    public Usuario(){
+    }
+    public Usuario(int id, String nome, String email, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
     }
 
     // getters
@@ -17,8 +22,8 @@ public class Usuario {
     public String getNome() {
         return nome;
     }
-    public int getNumConta() {
-        return numConta;
+    public int getId() {
+        return id;
     }
 
     // setters
