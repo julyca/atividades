@@ -1,8 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import javax.print.DocFlavor.STRING;
-
 import controls.Seguranca;
 import controls.Sessao;
 import models.Transacoes;
@@ -31,18 +29,18 @@ public class App {
         }
 
         // gerando uma operação de recebimento de 250 (usuario 1)
-        String qr = tr.GeradorQRcode(Sessao.usuarios.get(0), 250);
+        String qr = tr.GeradorQRcode(Sessao.usuarios.get(0), 250, seg);
 
         // pagando a requisição do usuário 1 (usu 2, usu 3 e usu 2 [de novo])
-        tr.pagamentoQRcode(Sessao.usuarios.get(1), Sessao.usuarios.get(0), qr);
-        tr.pagamentoQRcode(Sessao.usuarios.get(2), Sessao.usuarios.get(0), qr);
-        tr.pagamentoQRcode(Sessao.usuarios.get(1), Sessao.usuarios.get(0), qr);
+        tr.pagamentoQRcode(Sessao.usuarios.get(1), Sessao.usuarios.get(0), qr, seg);
+        tr.pagamentoQRcode(Sessao.usuarios.get(2), Sessao.usuarios.get(0), qr, seg);
+        tr.pagamentoQRcode(Sessao.usuarios.get(1), Sessao.usuarios.get(0), qr, seg);
 
         // gerando uma operação de recebimento de 1000 (usuario 2)
-        String qr2 = tr.GeradorQRcode(Sessao.usuarios.get(1), 1000);
+        String qr2 = tr.GeradorQRcode(Sessao.usuarios.get(1), 1000, seg);
 
         // pagando a requisição do usuário 2 (usu 3)
-        tr.pagamentoQRcode(Sessao.usuarios.get(2), Sessao.usuarios.get(1), qr2);
+        tr.pagamentoQRcode(Sessao.usuarios.get(2), Sessao.usuarios.get(1), qr2, seg);
 
         // exibindo o estado das contas bancárias dos usuários criados após operações.
         System.out.println("Estado Final:");

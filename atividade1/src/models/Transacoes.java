@@ -12,18 +12,14 @@ public class Transacoes {
     
     }
 
-    public String GeradorQRcode(Usuario usuario, double valor){
-        Seguranca seg = new Seguranca();
+    public String GeradorQRcode(Usuario usuario, double valor, Seguranca seg){
         int numTransacao = getnumQRcode();
-        return seg.getContaUsuario(usuario.getId()) + "; " + usuario.getNome() + "; " + valor + "; " + numTransacao;
-
+        return seg.getContaUsuario(usuario.getId()).getId() + "; " + usuario.getNome() + "; " + valor + "; " + numTransacao;
     }
 
-    public void pagamentoQRcode(Usuario remetente, Usuario destinatario, String QRcode){
-        Seguranca seg = new Seguranca();
+    public void pagamentoQRcode(Usuario remetente, Usuario destinatario, String QRcode, Seguranca seg){
         String[] array = new String[4];
         array = QRcode.split(";");
-        System.out.println(array[0]);
         double valor = Double.parseDouble(array[2]);
 
         if (seg.getContaUsuario(remetente.getId()).sacar(valor)){
