@@ -21,8 +21,9 @@ public class Transacoes {
 
     public void pagamentoQRcode(Usuario remetente, Usuario destinatario, String QRcode){
         Seguranca seg = new Seguranca();
-        String array[] = new String[4];
+        String[] array = new String[4];
         array = QRcode.split(";");
+        System.out.println(array[0]);
         double valor = Double.parseDouble(array[2]);
 
         if (seg.getContaUsuario(remetente.getId()).sacar(valor)){
